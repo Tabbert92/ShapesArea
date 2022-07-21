@@ -1,4 +1,8 @@
-﻿namespace ShapeAreaCalculation
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ShapeAreaCalculation
 {
     public class Circle : Shape
     {
@@ -6,9 +10,9 @@
 
         public override double CalculateArea()
         {
-            if (!canExist) return -1;
+            if (!CanExist) return -1;
 
-            return Math.PI * Math.Pow(ParameterList.First(),2);
+            return Math.PI * Math.Pow(ParameterList.First(), 2);
         }
     }
 }

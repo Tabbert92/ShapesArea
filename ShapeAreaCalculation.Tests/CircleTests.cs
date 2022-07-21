@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using NUnit.Framework;
+
 namespace ShapeAreaCalculation.Tests
 {
     public class CircleTests
@@ -13,7 +17,7 @@ namespace ShapeAreaCalculation.Tests
             var testResult = circle.CalculateArea();
 
             //Assert
-            Assert.False(circle.canExist);
+            Assert.False(circle.CanExist);
             Assert.True(testResult == -1);
         }
 
@@ -28,7 +32,7 @@ namespace ShapeAreaCalculation.Tests
             var testResult = circle.CalculateArea();
 
             //Assert
-            Assert.False(circle.canExist);
+            Assert.False(circle.CanExist);
             Assert.True(testResult == -1);
         }
 
@@ -42,7 +46,7 @@ namespace ShapeAreaCalculation.Tests
             var testResult = circle.CalculateArea();
 
             //Assert
-            Assert.False(circle.canExist);
+            Assert.False(circle.CanExist);
             Assert.True(testResult == -1);
         }
 
@@ -57,7 +61,7 @@ namespace ShapeAreaCalculation.Tests
             var testResult = circle.CalculateArea();
 
             //Assert
-            Assert.False(circle.canExist);
+            Assert.False(circle.CanExist);
             Assert.True(testResult == -1);
         }
 
@@ -67,13 +71,13 @@ namespace ShapeAreaCalculation.Tests
             // Arrange
             var testList = new List<double>() { 2 };
             var circle = new Circle(testList);
-            double expectedResult = 12.566370614359172;
+            double expectedResult = 12.56637;
 
             //Act
-            var testResult = circle.CalculateArea();
+            var testResult = Math.Round( circle.CalculateArea(),5);
 
             //Assert
-            Assert.True(circle.canExist);
+            Assert.True(circle.CanExist);
             Assert.AreEqual(expectedResult,testResult);
         }
     }

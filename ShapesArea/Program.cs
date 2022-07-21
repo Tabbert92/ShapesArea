@@ -1,16 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 using ShapeAreaCalculation;
 
-namespace MyApp // Note: actual namespace depends on the project name.
+namespace MyApp
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             var calcularor = new ShapeAreaCalculator();
-            var result = calcularor.calculateArea("triangle", new List<double>() { 1, 1, 1 });
+
+            var result = calcularor.СalculateArea("triangle", new List<double>() { 1, 1, 1 });
             Console.WriteLine(result);
-            result = calcularor.calculateArea("circle", new List<double>() { 2 });
+
+            result = calcularor.СalculateArea("circle", new List<double>() { 2 });
             Console.Write(result);
         }
     }

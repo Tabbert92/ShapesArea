@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework.Internal;
+using NUnit.Framework;
 
 namespace ShapeAreaCalculation.Tests
 {
-    internal class TriangleTests
+    public class TriangleTests
     {
         private static readonly object[] _TestCasesInputNegativeNumber = GenerateTestCasesInputNegativeNumber();
 
@@ -34,7 +31,7 @@ namespace ShapeAreaCalculation.Tests
             var testResult = triangle.CalculateArea();
 
             //Assert
-            Assert.False(triangle.canExist);
+            Assert.False(triangle.CanExist);
             Assert.True(testResult == -1);
         }
 
@@ -64,7 +61,7 @@ namespace ShapeAreaCalculation.Tests
             var testResult = triangle.CalculateArea();
 
             //Assert
-            Assert.False(triangle.canExist);
+            Assert.False(triangle.CanExist);
             Assert.True(testResult == -1);
         }
 
@@ -79,7 +76,7 @@ namespace ShapeAreaCalculation.Tests
             var testResult = triangle.CalculateArea();
 
             //Assert
-            Assert.False(triangle.canExist);
+            Assert.False(triangle.CanExist);
             Assert.True(testResult == -1);
         }
 
@@ -93,7 +90,7 @@ namespace ShapeAreaCalculation.Tests
             var testResult = triangle.CalculateArea();
 
             //Assert
-            Assert.False(triangle.canExist);
+            Assert.False(triangle.CanExist);
             Assert.True(testResult == -1);
         }
 
@@ -101,7 +98,7 @@ namespace ShapeAreaCalculation.Tests
         public void Test_InputRightTriangleValidParameter_ReturnsExpectedResult()
         {
             // Arrange
-            var testList = new List<double>(){3,4,5};
+            var testList = new List<double>() { 3, 4, 5 };
             var triangle = new Triangle(testList);
             double expectedResult = 6;
 
@@ -109,7 +106,7 @@ namespace ShapeAreaCalculation.Tests
             var testResult = triangle.CalculateArea();
 
             //Assert
-            Assert.True(triangle.canExist);
+            Assert.True(triangle.CanExist);
             Assert.AreEqual(expectedResult, testResult);
         }
 
@@ -119,23 +116,23 @@ namespace ShapeAreaCalculation.Tests
             // Arrange
             var testList = new List<double>() { 1, 1, 1 };
             var triangle = new Triangle(testList);
-            double expectedResult = 0.4330127018922193;
+            double expectedResult = 0.43301;
 
             //Act
-            var testResult = triangle.CalculateArea();
+            var testResult = Math.Round(triangle.CalculateArea(), 5);
 
             //Assert
-            Assert.True(triangle.canExist);
+            Assert.True(triangle.CanExist);
             Assert.AreEqual(expectedResult, testResult);
         }
 
         [Test]
-        public void Test_InputRightTriangle_ExpectedIsRightIsTrue()
+        public void Test_InputRightAngledTriangle_ExpectedIsRightAngledIsTrue()
         {
             // Arrange
             var testList = new List<double>() { 3, 4, 5 };
             var triangle = new Triangle(testList);
-            
+
             //Assert
             Assert.True(triangle.IsRight);
         }
@@ -157,12 +154,12 @@ namespace ShapeAreaCalculation.Tests
             // Arrange
             var testList = new List<double>() { 1, 4, 1 };
             var triangle = new Triangle(testList);
-            
+
             //Act
             var testResult = triangle.CalculateArea();
 
             //Assert
-            Assert.False(triangle.canExist);
+            Assert.False(triangle.CanExist);
             Assert.True(testResult == -1);
         }
     }

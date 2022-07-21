@@ -1,19 +1,22 @@
-﻿namespace ShapeAreaCalculation;
+﻿using System.Collections.Generic;
 
-public class ShapeAreaCalculator
+namespace ShapeAreaCalculation
 {
-    public double calculateArea(string shapeName, List<double> shapeParameters)
+    public class ShapeAreaCalculator
     {
-        Shape shape;
+        public double СalculateArea(string shapeName, List<double> shapeParameters)
+        {
+            Shape shape;
 
-        if (shapeName == "circle")
-            shape = new Circle(shapeParameters);
+            if (shapeName == "circle")
+                shape = new Circle(shapeParameters);
 
-        else if (shapeName == "triangle")
-            shape = new Triangle(shapeParameters);
+            else if (shapeName == "triangle")
+                shape = new Triangle(shapeParameters);
 
-        else return -1;
+            else return -1;
 
-        return shape.CalculateArea();
+            return shape.CalculateArea();
+        }
     }
 }
